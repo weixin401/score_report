@@ -4,7 +4,10 @@
 
 def get():
 
-    route = [
+    routes = [
+        (r'/?', 'controller.homepage.HomePageHandler'),
         (r'/tes', 'controller.statistic.TestHandler'),
+
     ]
-    return route
+
+    return routes
