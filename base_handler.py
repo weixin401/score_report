@@ -4,5 +4,9 @@ from tornado.web import RequestHandler
 class BaseHandler(RequestHandler):
 
     def prepare(self):
-        self.template = self.settings['template']
+        pass
+
+    @property
+    def db(self):
+        return self.settings['mongodb_client']['klx_xmath']
 
