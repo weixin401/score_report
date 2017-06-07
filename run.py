@@ -29,6 +29,7 @@ class RunReport(Application):
         settings.define_app_options()
         parse_command_line(final=False)
         self_dir = os.path.dirname(os.path.abspath(__file__))
+        upload_files_dir = self_dir + '/upload_files'
         conf_file_path = os.path.join(self_dir, 'server.conf')
         if os.path.exists(conf_file_path):
             parse_config_file(conf_file_path, final=False)
@@ -44,6 +45,7 @@ class RunReport(Application):
         mongodb_client = self.setup_mongodb_client()
         app_settings = {
             'template_loader': loader,
+            'upload_dir': upload_files_dir,
             'mongodb_client': mongodb_client,
             'static_handler_class': SmartStaticFileHandler,
             'xsrf_cookies': False,
