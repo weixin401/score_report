@@ -16,6 +16,7 @@ def upload_excel(handler, data):
     xls_dict = XLS_TYPE[handler.excel_type]
     xls_name = str(time.time()) + '_temp_score.xls'
     try:
+        print xls_name
         students_xls = open(xls_name, 'w')
         students_xls.write(data)
         students_xls.close()
