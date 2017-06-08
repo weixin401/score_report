@@ -7,7 +7,7 @@ from base_handler import BaseHandler
 from error import BLError
 from model.user import find_user
 
-class AuthLogin(BaseHandler):
+class AuthLoginHandler(BaseHandler):
     ALLOW_ANONIMITY = True
     def get(self):
         next_url = self.get_argument('next_url', '')
