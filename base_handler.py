@@ -14,7 +14,7 @@ class BaseHandler(RequestHandler):
 
     @property
     def db(self):
-        return self.settings['mongodb_client']['klx_xmath']
+        return self.settings['mongodb_client']['report']
 
     @property
     def upload_dir(self):
