@@ -48,7 +48,7 @@ class RunReport(Application):
             'upload_dir': upload_files_dir,
             'mongodb_client': mongodb_client,
             'static_handler_class': SmartStaticFileHandler,
-            'xsrf_cookies': False,
+            'xsrf_cookies': True,
             'static_path': u'/static/',
             'debug': options.debug,
         }
@@ -57,7 +57,6 @@ class RunReport(Application):
     @staticmethod
     def setup_mongodb_client():
         client = MongoClient(options.mongodb_host, options.mongodb_port)
-        print client.alive()
         logging.info('Connected to subject db: %s:%d' %
                      (options.mongodb_host, options.mongodb_port))
         return client
