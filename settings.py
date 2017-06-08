@@ -13,6 +13,6 @@ def define_app_options():
 
     define('mongodb_host', default='10.200.2.234')
     define('mongodb_port', default=27017)
-    define('mongodb_name', default="test")
+    define('mongodb_name', default="report")
     define('db_name')
     define('types', default=[])
