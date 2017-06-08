@@ -57,6 +57,7 @@ class RunReport(Application):
     @staticmethod
     def setup_mongodb_client():
         client = MongoClient(options.mongodb_host, options.mongodb_port)
+        print client.alive()
         logging.info('Connected to subject db: %s:%d' %
                      (options.mongodb_host, options.mongodb_port))
         return client
