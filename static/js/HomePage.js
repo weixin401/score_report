@@ -9,12 +9,6 @@ $("#upload_img_box img").click(function(){
 
 $("#file").change(function()
 {
-    var fileVal = $("#file").val();
-    $("#show_file").val(fileVal);
-});
-$("#upload_file").click(function()
-{
-
     var _xsrf = $("input[name='_xsrf']").val();
     $("#home_title").append(_xsrf);
     var formData = new FormData($("#uploadForm")[0]);
@@ -59,6 +53,11 @@ $("#upload_file").click(function()
     }).fail(function(data){
         alert("上传失败");
     });
+});
+$("#upload_file").click(function()
+{
+
+
 });
 $("#upload_ok_file").click(function(){
 
