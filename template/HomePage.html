@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    this is home page
-</body>
-</html>
+{% extends "./base/base.html" %}
+{% block style %}
+<link  rel="stylesheet" href="{{static_url("css/jquery.my-modal.1.1.css")}}"/>
+<link  rel="stylesheet" href="{{static_url("css/HomePage.css")}}"/>
+{% endblock %}
+
+{% block content %}
+<div class="home_title" id="home_title"></div>
+<div class="home_nav">
+    <form id= "uploadForm" class="uploadForm">
+        {{ xsrf_form_html()|safe }}
+        <input type="file" name="file" id="file"/>
+    </form>
+    <div class="button_1" id="button_1"></div>
+    <div class="button_2" id="button_2"></div>
+
+    <!--
+        描述：上传Dialog
+    -->
+    <div class="m-modal" id="upload_dialog">
+        <div class="m-modal-dialog">
+            <div class="m-top">
+                <h4 class="m-modal-title">
+                    Excel上传
+                </h4>
+                <span class="m-modal-close">&times;</span>
+            </div>
+            <div class="m-middle">
+                <div class="upload_img_box" id="upload_img_box"><img src={{static_url("image/upload.png")}}></div>
+            </div>
+            <div class="m-bottom">
+                <div style="width:108px;float:right;margin-right: 15px;font-size:10px"><button type="button" class="btn btn-success btn-block" id="upload_file">上 传</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+            描述：Excel Dialog
+        -->
+    <div class="m-modal" id="excel_dialog">
+        <div class="m-modal-dialog">
+            <div class="m-top">
+                <h4 class="m-modal-title">
+                    Excel内容
+                </h4>
+                <span class="m-modal-close">&times;</span>
+            </div>
+            <div class="m-middle">
+                <div class="excel_content">
+                    <table class="table table-striped" id="excel_table"></table>
+                </div>
+            </div>
+            <div class="m-bottom">
+                <div style="width:108px;float:right;margin-right: 15px;font-size:10px"><button type="button" class="btn btn-success btn-block" id="upload_ok_file">上 传</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{static_url("js/jquery.my-modal.1.1.js")}}"></script>
+<script type="text/javascript" src="{{static_url("js/HomePage.js")}}"></script>
+<script>
+    var m1 = new MyModal.modal(function() {
+        alert("你点击了确定");
+    });
+    $('.btn1').on("click", function() {
+        m1.show();
+    });
+</script>
+{% endblock %}
