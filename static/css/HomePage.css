@@ -24,23 +24,29 @@
 }
 .excel_content{
     height:300px;
-    width:560px;
+    width:575px;
     overflow: auto;
 }
+.excel_table_th{
+    height:10px;
+    line-height: 10px;
+    font-size:14px;
+    font-weight: 500;
+}
 .excel_table_td{
-    height:8px;
-    line-height: 8px;
-    font-size:10px;
+    height:6px;
+    line-height: 6px;
+    font-size:8px;
 }
 .upload_img_box{
     width:100px;
     margin: 0 auto;
 }
 .upload_img_box img{
-    width:100px;
+    width:90px;
     margin-top: -15px;
 }
 .upload_img_box img:hover{
-    width:100px;
+    width:90px;
     cursor: pointer;
 }

@@ -4,6 +4,7 @@ $("#button_1").click(function()
     showDialog('upload_dialog');
 });
 $("#upload_img_box img").click(function(){
+    $("#file").val("");
     $("#file").click();
 });
 
@@ -31,7 +32,7 @@ $("#file").change(function()
         {
             for(var key in jsonObj[i])
             {
-                html+="<th>"+key+"</th>"
+                html+="<th><div class='excel_table_th'> "+key+"<divh></th>"
             }
             break;
         }
@@ -53,6 +54,7 @@ $("#file").change(function()
     }).fail(function(data){
         alert("上传失败");
     });
+
 });
 $("#upload_file").click(function()
 {

@@ -18,8 +18,8 @@
     <!--
         描述：上传Dialog
     -->
-    <div class="m-modal" id="upload_dialog">
-        <div class="m-modal-dialog">
+    <div class="m-modal" id="upload_dialog" >
+        <div class="m-modal-dialog" style="width:400px;">
             <div class="m-top">
                 <h4 class="m-modal-title">
                     Excel上传
@@ -30,7 +30,6 @@
                 <div class="upload_img_box" id="upload_img_box"><img src={{static_url("image/upload.png")}}></div>
             </div>
             <div class="m-bottom">
-                <div style="width:108px;float:right;margin-right: 15px;font-size:10px"><button type="button" class="btn btn-success btn-block" id="upload_file">上 传</button></div>
             </div>
         </div>
     </div>
@@ -52,7 +51,9 @@
                 </div>
             </div>
             <div class="m-bottom">
-                <div style="width:108px;float:right;margin-right: 15px;font-size:10px"><button type="button" class="btn btn-success btn-block" id="upload_ok_file">上 传</button></div>
+                <div style="width:80px;float:right;margin-right: 10px;font-size:10px">
+                    <button type="button" class="btn btn-success btn-block btn-sm" id="upload_ok_file">上 传</button>
+                </div>
             </div>
         </div>
     </div>
