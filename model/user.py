@@ -4,7 +4,7 @@
 import logging
 import re
 import string
-from controller.error import BLError
+from util.error import BLError
 
 
 _UNICODE_SPACE_PATTERN = re.compile(
@@ -45,13 +45,13 @@ def find_user(handler, username, password):
         raise BLError('没有该用户：{}'.format(username))
     elif user['password'] != password:
         raise BLError('密码不正确！')
-    else:
-        return user
 
 
-def create_user(handler, username, password):
+def create_user(handler, username, password, repassword):
     check_name(username)
     check_password(password)
+    if password != repassword:
+        raise BLError('两次密码不一样！')
     check_username_exist(handler.db, username)
     id_ = handler.db.user.insert({'username': username, 'password': password})
     logging.info("created new user {}".format(username))

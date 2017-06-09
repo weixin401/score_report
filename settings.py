@@ -11,7 +11,7 @@ def define_app_options():
     define('cookie_secret', default='')
     define('port', default=8001)
 
-    define('mongodb_host', default='10.200.2.234')
+    define('mongodb_host', default='47.94.156.102')
     define('mongodb_port', default=27017)
     define('mongodb_name', default="report")
     define('db_name')

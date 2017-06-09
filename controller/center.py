@@ -5,8 +5,8 @@ import os
 import json
 import xlrd
 import time
-from base_handler import BaseHandler
-from escape import safe_json_decode
+from util.base_handler import BaseHandler
+from util.escape import safe_json_decode
 import report
 import excel
 

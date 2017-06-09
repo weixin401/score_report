@@ -3,16 +3,16 @@
 
 import logging
 import os
-
+from util.session import SessionHandler
 from tornado.httpserver import HTTPServer
 from tornado.options import options, parse_command_line, parse_config_file
 from tornado.ioloop import IOLoop
 from tornado.web import Application
-
+from redis import client
 from jinja2 import ChoiceLoader
 from jinja2 import FileSystemLoader
-from template import JinjaLoader
-from request_handlers import SmartStaticFileHandler, MultiFileFindler, install_tornado_shutdown_handler
+from util.template import JinjaLoader
+from util.request_handlers import SmartStaticFileHandler, MultiFileFindler, install_tornado_shutdown_handler
 
 from pymongo import MongoClient
 import routes
@@ -48,9 +48,11 @@ class RunReport(Application):
             'upload_dir': upload_files_dir,
             'mongodb_client': mongodb_client,
             'static_handler_class': SmartStaticFileHandler,
-            'xsrf_cookies': True,
+            'xsrf_cookies': False,
             'static_path': u'/static/',
             'debug': options.debug,
+            'cookie_secret': 'bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=',
+            'login_url': '/login',
         }
         super(RunReport, self).__init__(routes.get(), **app_settings)
 
@@ -63,8 +65,12 @@ class RunReport(Application):
 
 
 def start(app):
+    app.redis = client.Redis()
+    app.SessionHandler = SessionHandler
     server = HTTPServer(app, xheaders=True)
     server.listen(options.port)
+    server.redis = client.Redis()
+    server.SessionHandler = SessionHandler
     install_tornado_shutdown_handler(IOLoop.instance(), server)
     logging.info("start service at port =  " + str(options.port) + "\n")
 
