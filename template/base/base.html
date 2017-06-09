@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  rel="stylesheet" href="{{static_url("css/bootstrap.min.css")}}"/>
+    <link  rel="stylesheet" href="{{static_url("css/css3-ghost-buttons/css/style.css")}}"/>
+    <link  rel="stylesheet" href="{{static_url("css/base.css")}}"/>
+
+    <style type="text/css">
+
+    </style>
+    {% block style %}{% endblock %}
+</head>
+<body>
+<div id="top_float" class="top_float"></div>
+<div id="header" class="header"></div>
+<div id="content" class="content">
+    {% block content %}{% endblock %}
+</div>
+<div id="footer" class="footer"></div>
+</body>
+<script type="text/javascript" src="{{static_url("js/jquery-3.0.0.min.js")}}"></script>
+<script type="text/javascript" src="{{static_url("js/bootstrap.min.js")}}"></script>
+<script type="text/javascript" src="{{static_url("js/base.js")}}"></script>
+{% block javascript %}{% endblock %}
+<script type="text/javascript"></script>
+
+</html>

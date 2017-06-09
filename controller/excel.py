@@ -6,7 +6,7 @@ import xlrd
 import time
 import traceback
 
-from error import BLError
+from util.error import BLError
 
 XLS_TYPE = [[u'student_name', u'score'],
             [u'student_name', u'class_name', u'score']]

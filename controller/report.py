@@ -6,7 +6,7 @@ import xlrd
 import time
 import traceback
 import copy
-from error import BLError
+from util.error import BLError
 
 
 def generate_report(handler, students_score, total_score, school_name, class_name):
