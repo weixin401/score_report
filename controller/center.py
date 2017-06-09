@@ -37,6 +37,7 @@ class ScoreReportHandler(BaseHandler):
     def post(self):
         students_score = safe_json_decode(self.get_argument('students_score'))
         total_score = self.get_argument('total_score')
+        total_score = int(total_score)
         school_name = self.get_argument('school_name', None)
         class_name = self.get_argument('class_name', None)
         result = report.generate_report(self, students_score, total_score, school_name, class_name)
