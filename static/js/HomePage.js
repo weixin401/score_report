@@ -1,7 +1,8 @@
 var excel_json;
 $("#button_1").click(function()
 {
-    showDialog('upload_dialog');
+    //showDialog('upload_dialog');
+
 });
 $("#upload_img_box img").click(function(){
     $("#file").val("");
