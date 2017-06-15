@@ -1,0 +1,44 @@
+.function_introduce{
+    width:100%;
+    height:700px;
+    background-color: #F0F0F0;
+}
+.left_nav{
+    width:150px;
+    height:700px;
+    background-color: #e0e0e0;
+}
+.right_content{
+
+}
+.left_nav ul{
+    list-style:none;
+
+}
+.left_nav ul li{
+    width:150px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid #aaaaaa;
+    color:#333333;
+    font-weight: 300;
+    background-color: #e0e0e0;
+    transition: background-color 1.5s;
+    -moz-transition: background-color 1.5s; /* Firefox 4 */
+    -webkit-transition: background-color 1.5s; /* Safari 和 Chrome */
+    -o-transition: background-color 1.5s; /* Opera */
+}
+.left_nav ul li:hover{
+    cursor: pointer;
+    color:#ffffff;
+    background-color: #6600FF;
+    transition: background-color 1s;
+    -moz-transition: background-color 1s; /* Firefox 4 */
+    -webkit-transition: background-color 1s; /* Safari 和 Chrome */
+    -o-transition: background-color 1s; /* Opera */
+}
+.function_enter{
+    width:100%;
+    height:800px;
+}

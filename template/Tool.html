@@ -1,0 +1,39 @@
+
+{% extends "./base/base.html" %}
+{% block style %}
+<link  rel="stylesheet" href="{{static_url("css/jquery.my-modal.1.1.css")}}"/>
+<link  rel="stylesheet" href="{{static_url("css/Tool.css")}}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="function_introduce">
+    <div class="left_nav">
+        <ul>
+            <li>Home</li>
+            <li>PageOne</li>
+            <li>DropDown</li>
+            <li>LastPage</li>
+        </ul>
+    </div>
+    <div class="right_content">
+
+    </div>
+</div>
+<div class="function_enter">
+
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{static_url("js/jquery.my-modal.1.1.js")}}"></script>
+<script type="text/javascript" src="{{static_url("js/Tool.js")}}"></script>
+<script>
+    var m1 = new MyModal.modal(function() {
+        alert("你点击了确定");
+    });
+    $('.btn1').on("click", function() {
+        m1.show();
+    });
+</script>
+{% endblock %}
