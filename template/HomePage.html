@@ -7,14 +7,24 @@
 
 {% block content %}
 <div class="home_title" id="home_title"></div>
+<div class="home_background"></div>
 <div class="home_nav">
+
     <form id= "uploadForm" class="uploadForm">
         {{ xsrf_form_html()|safe }}
         <input type="file" name="file" id="file"/>
     </form>
-    <div class="button_1" id="button_1"></div>
-    <div class="button_2" id="button_2"></div>
-    <div class="clear:both"></div>
+    <div class="home_buttons_box">
+        <div class="button_2" id="button_2">
+            <div class="button2_img" id="button2_img"></div>
+            <div class="button2_text" id="button2_text">功能入口</div>
+        </div>
+        <div class="button_1" id="button_1">
+            <div class="button1_img" id="button1_img"></div>
+            <div class="button1_text" id="button1_text">功能简介</div>
+        </div>
+        <div class="clear:both"></div>
+    </div>
     <!--
         描述：上传Dialog
     -->

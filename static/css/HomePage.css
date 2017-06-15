@@ -5,31 +5,141 @@
 /*#2CA1E8
 #2793E4
  */
-.home_nav{
-    width:100%;
-    height:420px;
-    background:-moz-linear-gradient( top,#ccc,#000);
-    background: -webkit-gradient(linear, left top, right top, from(#2793E4), color-stop(0.25, #3c9de6), color-stop(0.5, #2793E4), color-stop(0.75, #3c9de6), to(#2CA1E8));
 
+.home_background{
+    position: absolute;
+    left:0;
+    top:150px;
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    background-image:url(../image/homebackground.png);
+    z-index:0;
+}
+.home_nav{
+    position: absolute;
+    left:0;
+    top:150px;
+    width:100%;
+    height:450px;
+    z-index:2;
+}
+.home_buttons_box{
+    width:1100px;
+    height:450px;
+    margin: 0 auto;
 }
 .button_1,.button_2{
-    float: left;
-    margin-top: 150px;
-    width:120px;
-    height:120px;
-    border-radius: 60px;
-    background-color: #00CD66;
+    float: right;
+    margin-top: 120px;
+    width:160px;
+    height: 200px;
+
 }
 .button_1{
-    margin-left: 350px;
+    margin-right: 100px;
 }
 .button_2{
-    margin-left: 160px;
+    margin-right: 10px;
+
 }
-.button_1:hover,.button_2:hover{
-    cursor: pointer;
-    box-shadow: 0 0 9px #00FF7F;
+.button_1:hover #button1_img,.button_2:hover #button2_img{
+    box-shadow: 0 0 10px #9AFE2E;
+    animation: rotate-x 0.4s;
+    -moz-animation: rotate-x 0.4s;	/* Firefox */
+    -webkit-animation: rotate-x 0.4s;	/* Safari 和 Chrome */
+    -o-animation: rotate-x 0.4s;	/* Opera */
+
 }
+.button_1:hover #button1_text,.button_2:hover #button2_text{
+    box-shadow: 0 0 10px #9AFE2E;
+    animation: rotate-x 0.4s;
+    -moz-animation: rotate-x 0.4s;	/* Firefox */
+    -webkit-animation: rotate-x 0.4s;	/* Safari 和 Chrome */
+    -o-animation: rotate-x 0.4s;	/* Opera */
+}
+
+
+.button1_img,.button2_img{
+    width:150px;
+    height:150px;
+    margin: 0 auto;
+    border-radius: 75px;
+    border: 3px solid #FFFFFF;
+    background-size:100px 100px;
+    background-position: 21px 21px;
+    background-repeat: no-repeat;
+}
+.button1_img{
+    background-image:url(../image/Introduction.png);
+}
+
+.button2_img{
+    background-image:url(../image/Functions.png);
+}
+
+.button1_text,.button2_text{
+    width:140px;
+    height:34px;
+    margin: 15px auto;
+    text-align: center;
+    line-height: 32px;
+    color:#ffffff;
+    border: 1px solid #FFFFFF;
+}
+@keyframes rotate-x {
+    50% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+/*  IE  */
+@-ms-keyframes rotate-x {
+    50% {
+        -ms-transform: scaleX(0);
+    }
+    100% {
+        -ms-transform: scaleX(1);
+    }
+}
+/* Safari and Chrome*/
+@-webkit-keyframes rotate-x {
+    50% {
+        -webkit-transform: scaleX(0);
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+    }
+}
+@-webkit-keyframes rotate-x-back {
+    50% {
+        -webkit-transform: scaleX(1);
+    }
+    100% {
+        -webkit-transform: scaleX(0);
+    }
+}
+/* Firefox  */
+@-moz-keyframes rotate-x {
+    50% {
+        -moz-transform: scaleX(0);
+    }
+    100% {
+        -moz-transform: scaleX(1);
+    }
+}
+/*  Opera  */
+@-o-keyframes rotate-x {
+    50% {
+        -o-transform: scaleX(0);
+    }
+    100% {
+        -o-transform: scaleX(1);
+    }
+}
+
 .split_line{
     width:100%;
     height:3px;

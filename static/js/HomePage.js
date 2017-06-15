@@ -1,4 +1,20 @@
 var excel_json;
+$("#button_1").on("mouseenter",function()
+{
+    $("#button_1").css("cursor","pointer");
+});
+$("#button_1").on("mouseleave",function()
+{
+    $("#button_1").css("cursor","default");
+});
+$("#button_2").on("mouseenter",function()
+{
+    $("#button_2").css("cursor","pointer");
+});
+$("#button_2").on("mouseleave",function()
+{
+    $("#button_2").css("cursor","default");
+});
 $("#button_1").click(function()
 {
     //showDialog('upload_dialog');
