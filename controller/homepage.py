@@ -8,3 +8,10 @@ class HomePageHandler(BaseHandler):
     def get(self):
         self.render('HomePage.html',
                     user=self.current_user)
+
+
+class ToolHandler(BaseHandler):
+
+    def get(self):
+        self.render('Tool.html',
+                    user=self.current_user)
