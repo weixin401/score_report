@@ -33,10 +33,10 @@
     float:left;
     width:500px;
     height:350px;
-    margin-top: 35px;
+    margin-top: 45px;
     background-repeat: no-repeat;
     background-image:url(../image/homeLeftLogo.png);
-    background-size: 450px;
+    background-size: 400px;
 }
 .button_1,.button_2{
     float: right;
@@ -49,7 +49,7 @@
     margin-right: 100px;
 }
 .button_2{
-    margin-right: 10px;
+    margin-right: 100px;
 
 }
 .button_1:hover #button1_img,.button_2:hover #button2_img{

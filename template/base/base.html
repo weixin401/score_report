@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link  rel="stylesheet" href="{{static_url("css/bootstrap.min.css")}}"/>
-    <link  rel="stylesheet" href="{{static_url("css/css3-ghost-buttons/css/style.css")}}"/>
+    <link  rel="stylesheet" href="{{static_url("hDialog/css/animate.min.css")}}"/>
+    <link  rel="stylesheet" href="{{static_url("hDialog/css/common.css")}}"/>
     <link  rel="stylesheet" href="{{static_url("css/base.css")}}"/>
 
     <style type="text/css">
@@ -15,17 +16,64 @@
 <body>
 
 <div class="foreground_box">
-    <div id="top_float" class="top_float"></div>
+    <div id="top_float" class="top_float">
+        <div class="user_operator">
+            <div class="example">
+                <a class="demo41">zoomIn</a>
+            </div>
+            <div class="login_button">登陆</div>
+            <div class="register_button">注册</div>
+        </div>
+    </div>
     <div id="header" class="header"></div>
     <div id="content" class="content">
         {% block content %}{% endblock %}
     </div>
     <div id="footer" class="footer"></div>
+
 </div>
+
+<!-- 注意：请将要放入弹框的内容放在比如id="HBox"的容器中，然后将box的值换成该ID即可，比如：$(element).hDialog({'box':'#HBox'}); -->
+<div id="HBox">
+    <form action="" method="post" onsubmit="return false;">
+        <ul class="list">
+            <li>
+                <strong>昵 称  <font color="#ff0000">*</font></strong>
+                <div class="fl"><input type="text" name="nickname" value="" class="ipt nickname" /></div>
+            </li>
+            <li>
+                <strong>手 机 <font color="#ff0000">*</font></strong>
+                <div class="fl"><input type="text" name="phone" value="" class="ipt phone" /></div>
+            </li>
+            <li>
+                <strong>邮 箱 <font color="#ff0000">*</font></strong>
+                <div class="fl"><input type="text" name="email" value="" class="ipt email" /></div>
+            </li>
+            <li>
+                <strong>性 别 <font color="#ff0000">&nbsp;</font></strong>
+                <div class="fl">
+                    <label class="mr10"><input type="radio" name="sex" value="1"/>男</label>
+                    <label class="mr10"><input type="radio" name="sex" value="2"/>女</label>
+                    <label><input type="radio" name="sex" value="3"/>保密</label>
+                </div>
+            </li>
+            <li>
+                <strong>爱 好 <font color="#ff0000">&nbsp;</font></strong>
+                <div class="fl">
+                    <label class="mr10"><input type="checkbox" name="like" value="男" />男</label>
+                    <label class="mr10"><input type="checkbox" name="like" value="女"/>女</label>
+                    <label><input type="checkbox" name="like" value="都喜欢"/>都喜欢</label>
+                </div>
+            </li>
+            <li><input type="submit" value="确认提交" class="submitBtn" /></li>
+        </ul>
+    </form>
+</div><!-- HBox end -->
 
 </body>
 <script type="text/javascript" src="{{static_url("js/jquery-3.0.0.min.js")}}"></script>
 <script type="text/javascript" src="{{static_url("js/bootstrap.min.js")}}"></script>
+<script type="text/javascript" src="{{static_url("hDialog/js/jquery.hDialog.min.js")}}"></script>
 <script type="text/javascript" src="{{static_url("js/base.js")}}"></script>
 {% block javascript %}{% endblock %}
 <script type="text/javascript"></script>

@@ -19,6 +19,40 @@ body{
     box-shadow: 0 5px 5px #DDDDDD;
     z-index: 999;
 }
+.user_operator{
+    float: right;
+    width:300px;
+    height:80px;
+}
+.login_button,.register_button{
+    float: left;
+    width:80px;
+    height:25px;
+    margin-left: 15px;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 2px;
+    font-size:12px;
+}
+.login_button{
+    color:#00B7D6;
+    border: 1px solid #00B7D6;
+}
+.register_button{
+    color:#21A900;
+    border: 1px solid #21A900;
+
+}
+.login_button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 8px #00B7D6;
+}
+.register_button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 8px #21A900;
+}
+
 .header{
     width:1100px;
     height:100px;
