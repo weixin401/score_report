@@ -30,7 +30,7 @@ class AuthLoginHandler(BaseHandler):
                                expires_days=30 if remember else None,
                                httponly=True)
         self.session.password = password
-        self.redirect('/')
+        self.write({'success': True})
 
 
 class AuthSignupHandler(BaseHandler):

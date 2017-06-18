@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  rel="stylesheet" href="psqdialog.css"/>
+
+    <style type="text/css">
+        .test_button,.close_button{
+            width:120px;
+            height:25px;
+            background-color: #3CB371;
+            color:#ffffff;
+            text-align: center;
+            line-height:25px;
+        }
+        .test_button:hover{
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="test_button" id="test_button">弹窗</div>
+<div class="close_button" id="close_button">关闭弹窗</div>
+
+
+<div class="box-dialog" id="box-dialog-id">
+    <div class="box-dialog-header"><div class="box-dialog_close"></div></div>
+</div>
+
+</body>
+<script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
+
+<script type="text/javascript" src="psqdialog.js"></script>
+
+<script>
+
+    var loginDialog = new PSQDialog("box-dialog-id");
+    loginDialog.init(300,400);
+
+    $('.test_button').click(function() {
+        //PSQDialog.initDialog(200,300);
+        loginDialog.showDialog();
+    });
+    $('.close_button').click(function() {
+        loginDialog.hideDialog();
+    });
+
+
+</script>
+</html>
