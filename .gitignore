@@ -2,7 +2,6 @@
 *.pyproj
 /server.conf
 
-/static/node_modules
 .idea/
 /output
 /mathjax
